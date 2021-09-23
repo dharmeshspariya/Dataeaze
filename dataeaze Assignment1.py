@@ -15,7 +15,7 @@ df11.write.option("header","true").csv("/home/ubuntu/Desktop/Dataeaze/output/out
 # Assignment 2
 df12 = df1.union(df2)
 df12.registerTempTable("emp2")
-df12=spark.sql("select count(*) from employees where InvestmentnType ='Seed/ Angel Funding'")
+df12=spark.sql("select count(*) from emp2 where InvestmentnType ='Seed/ Angel Funding'")
 df12.write.option("header","true").csv("/home/ubuntu/Desktop/Dataeaze/output/output2")
 
 # Assignment 3
