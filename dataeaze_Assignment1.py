@@ -50,7 +50,7 @@ df6.registerTempTable("emp6")
 from pyspark.sql.types import IntegerType
 df7 = df6.withColumn("Amount", df6["Amount"].cast(IntegerType()))
 df7.registerTempTable("emp7")
-spark.sql("select Investors_Name, years, Amount from "+" (select *, row_number() OVER (PARTITION BY years ORDER BY Amount DESC) as rn "+" FROM emp7) tmp where rn = 1").show()
-#spark.sql("SELECT Investors_Name,years, MAX(Amount) FROM emp7 GROUP BY years").show()
+df7=spark.sql("select Investors_Name, years, Amount from "+" (select *, row_number() OVER (PARTITION BY years ORDER BY Amount DESC) as rn "+" FROM emp7) tmp where rn = 1")
+
 
 
