@@ -1,4 +1,4 @@
-#ource d1.1/bin/activate
+#source d1.1/bin/activate
 #pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql import SQLContext
